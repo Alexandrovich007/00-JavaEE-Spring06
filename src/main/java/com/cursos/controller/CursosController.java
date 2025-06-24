@@ -56,7 +56,7 @@ public class CursosController {
 	@GetMapping("/eliminar")
 	public String eliminarCurso(@RequestParam("idCurso") int idCurso) {
 		service.eliminarCurso(idCurso);
-		return "menu"; 
+		return "menuDev"; 
 	}
 	
 }
