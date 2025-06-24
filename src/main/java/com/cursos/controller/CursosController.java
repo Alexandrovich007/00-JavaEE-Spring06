@@ -59,6 +59,15 @@ public class CursosController {
 		return "menu";
 	}
 	
+<<<<<<< HEAD
 	
+=======
+	// Movido desde arriba para probar conflicto
+	@GetMapping("/eliminar")
+	public String eliminarCurso(@RequestParam("idCurso") int idCurso) {
+		service.eliminarCurso(idCurso);
+		return "menuDev"; 
+	}
+>>>>>>> develop_v1.0.0
 	
 }
