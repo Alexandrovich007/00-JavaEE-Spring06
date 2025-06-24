@@ -37,6 +37,13 @@ public class CursosController {
 		return "curso"; // Redirige a la vista del curso jsp
 	}
 	
+	// Movido desde abajo para probar conflicto
+		@GetMapping("/eliminar")
+		public String eliminarCurso(@RequestParam("idCurso") int idCurso) {
+			service.eliminarCurso(idCurso);
+			return "menuPrincipal"; 
+		}
+	
 	@GetMapping("/recuperarActualizar")
 	public String recuperarActualizarCurso(@RequestParam("idCurso") int idCurso, HttpServletRequest request) {
 		Curso curso = service.buscarCurso(idCurso);
@@ -52,11 +59,6 @@ public class CursosController {
 		return "menu";
 	}
 	
-	// Movido desde arriba para probar conflicto
-	@GetMapping("/eliminar")
-	public String eliminarCurso(@RequestParam("idCurso") int idCurso) {
-		service.eliminarCurso(idCurso);
-		return "menu"; 
-	}
+	
 	
 }
