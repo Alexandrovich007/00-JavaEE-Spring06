@@ -24,7 +24,7 @@ public class CursosController {
 	 * @return
 	 */
 	
-	// PRÁCTICA STASH: línea modificada en develop para probar conflicto con main
+	// PRÁCTICA STASH: combinación de ambas lineas del stash main y de develop  
 
 	@PostMapping("/alta")
 	public String altaCurso(@ModelAttribute Curso curso) {
