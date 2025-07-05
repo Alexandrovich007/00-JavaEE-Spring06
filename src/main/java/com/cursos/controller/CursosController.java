@@ -23,6 +23,9 @@ public class CursosController {
 	 * @param curso
 	 * @return
 	 */
+	
+	// PRÁCTICA STASH: línea añadida en main
+
 	@PostMapping("/alta")
 	public String altaCurso(@ModelAttribute Curso curso) {
 		
