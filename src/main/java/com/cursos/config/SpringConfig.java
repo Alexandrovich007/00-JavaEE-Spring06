@@ -21,8 +21,8 @@ public class SpringConfig {
 	//Propiedad que se establece en el archivo application.properties que luego llama al server.xml name="refcursos"	
 	@Value("${ref-jndi}")
 	private String refData;
+	
 	//Configuracion del DataSource: que se obtiene del JNDI que se ha configurado en el servidor de aplicaciones (Tomcat, Wildfly, etc.)
-		
 	@Bean
 	public DataSource dataSource() {
 		JndiDataSourceLookup dsLookup = new JndiDataSourceLookup();

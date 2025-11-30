@@ -1,9 +1,13 @@
 package com.cursos.service;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cursos.model.Curso;
 import com.cursos.repository.CursosRepository;
 
+@Service
 public class CursosServiceImpl implements CursosService {
 	
 	@Autowired
@@ -38,6 +42,19 @@ public class CursosServiceImpl implements CursosService {
 			repository.eliminarCurso(curso);
 		}
 
+	}
+
+	@Override
+	public List<Curso> cursosDuracionMax(int duracion) {
+		 
+		return repository.cursosDuracion(duracion);
+	}
+
+	@Override
+	public void reducirPrecioCursos(int duracion, int porcentajeDescuento) {
+		
+		repository.reducirPrecioCursos(duracion, porcentajeDescuento);
+		
 	}
 
 }
