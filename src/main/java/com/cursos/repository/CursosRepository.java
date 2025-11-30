@@ -1,5 +1,7 @@
 package com.cursos.repository;
 
+import java.util.List;
+
 import com.cursos.model.Curso;
 
 public interface CursosRepository {
@@ -11,5 +13,11 @@ public interface CursosRepository {
 	void eliminarCurso(Curso curso);
 	
 	void actualizarCurso(Curso curso);
+	
+	List<Curso> cursosDuracion(int duracion);
+	
+	void eliminarCursosNombre(String nombreCurso);
+	
+	void reducirPrecioCursos(int duracion, int porcentajeDescuento);
 
 }
