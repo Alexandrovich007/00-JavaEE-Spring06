@@ -176,6 +176,23 @@ to {
 .btn-secondary:hover {
     background-color: #B0BEC5; /* un poco más oscuro al pasar el ratón */
 }
+.checkbox-group {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -206,16 +223,21 @@ to {
         
 		<form action="login" method="post">
 			<div class="form-group">
-				<label for="username">Usuario:</label> <input type="text"
-					id="username" placeholder="Ingrese su usuario" name="username"
-					required>
+				<label for="username">Usuario:</label> 
+				<!-- Prellenar con la cookie o con el intento fallido -->
+				<input type="text" id="username" placeholder="Ingrese su usuario" name="username" required value=${not empty usuarioIntentado ? usuarioIntentado : usuarioRecordado} >
 			</div>
 
 			<div class="form-group">
-				<label for="password">Contraseña:</label> <input type="password"
-					id="password" placeholder="Ingrese su contraseña" name="password"
-					required>
+				<label for="password">Contraseña:</label> <input type="password" id="password" placeholder="Ingrese su contraseña" name="password" required>
 			</div>
+			
+			 <!-- Checkbox para recordar usuario,si existe la cookie, marca el checkbox automáticamente-->
+			 <div class="checkbox-group">
+			 	<input type="checkbox" id="recordar" name="recordar" ${not empty usuarioRecordado ? 'checked' : ''}>
+			 	<label for="recordar">Recordar usuario</label>
+			 	
+			 </div>
 
 			<button type="submit">Iniciar Sesión</button>
 		</form>
